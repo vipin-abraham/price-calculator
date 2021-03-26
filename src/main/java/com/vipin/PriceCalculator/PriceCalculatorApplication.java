@@ -36,8 +36,6 @@ public class PriceCalculatorApplication {
         final ConfigurableApplicationContext applicationContext = SpringApplication.run(PriceCalculatorApplication.class, args);
         BicycleComponentRepository repositoryBean = applicationContext.getBean(BicycleComponentRepository.class);
         String inputFolderPath = applicationContext.getEnvironment().getProperty("priceCalulator.inputLocation");
-        System.out.println(inputFolderPath);
-        System.out.println("/home/vipin/atest/");
         File inputFolder = new File(inputFolderPath);
         Long dateOfPricing = applicationContext.getEnvironment().getProperty("priceCalulator.dateOfPricing", Long.class, System.currentTimeMillis());
         producerExecutor = Executors.newFixedThreadPool(5);
